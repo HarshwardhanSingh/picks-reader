@@ -1,0 +1,84 @@
+body {
+  font-family: 'Varela Round', sans-serif;
+  position: relative;
+}
+
+div.container_top,
+div.container_bottom {
+  position: absolute;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 5em;
+  box-shadow: 0 0 3px 1px #e9e9e9;
+  transition: transform 3s;
+  background: linear-gradient(to bottom, #F45C43, #EB3349);
+}
+
+.container_top {
+  top: 300px;
+}
+.container_bottom {
+  top: 400px;
+}
+
+@keyframes jumper1 {
+  0% {
+    top: 300px;
+  }
+  100% {
+    top: 350px;
+  }
+}
+
+@keyframes jumper2 {
+  0% {
+    top: 450px;
+  }
+  100% {
+    top: 400px;
+  }
+}
+
+.container_top {
+  animation-duration: 0.2s;
+  animation-name: jumper1;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.container_bottom {
+  animation-duration: 0.2s;
+  animation-name: jumper2;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.loader {
+  padding-top: 30rem;
+  padding-left: 10rem;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid #e9e9e9;
+  padding-bottom: 1rem;
+  margin-bottom: 3rem;
+}
+
+.pick-content {
+  padding: 10px;
+}
+
+.picks-list {
+  border-right: 2px solid #e9e9e9;
+  padding: 10px;
+}
+
+.pick {
+  border-bottom: 1px solid #e9e9e9;
+  padding-bottom: 10px;
+}
+
+a.btn {
+  margin: 5px;
+  border-radius: 2em;
+}
