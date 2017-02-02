@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import Pick from './Pick';
 import axios from 'axios';
 import {markdown} from "markdown";
+import * as actionCreators from '../actionCreators/actionCreators';
 
 class App extends React.Component {
 
@@ -12,14 +13,14 @@ class App extends React.Component {
   }
 
   fetchPick(download_url) {
-    this.props.dispatch({type: 'FETCH_PICK_CONTENT_START'})
+    this.props.dispatch(actionCreators.startFetchingPickContent())
 
     axios.get(download_url)
     .then(response => {
-      this.props.dispatch({type: 'FETCH_PICK_CONTENT', payload: response})
+      this.props.dispatch(actionCreators.fetchingPickContentDone(response))
     })
     .catch(error => {
-      console.log(error);
+      this.props.dispatch(actionCreators.fetchingError(error))
     })
   }
 
