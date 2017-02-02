@@ -12,6 +12,18 @@ class App extends React.Component {
     this.fetchPick = this.fetchPick.bind(this);
   }
 
+  componentWillMount() {
+    this.props.dispatch(actionCreators.startFetchingPicks());
+
+    axios.get('https://api.github.com/repos/code-mancers/picks/contents')
+    .then((response) => {
+      this.props.dispatch(actionCreators.fetchingPicksDone(response))
+    })
+    .catch((error) => {
+      this.props.dispatch(actionCreators.fetchingError(error));
+    })
+  }
+
   fetchPick(download_url) {
     this.props.dispatch(actionCreators.startFetchingPickContent())
 

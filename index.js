@@ -15,15 +15,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 )
-
-store.dispatch((dispatch) => {
-  dispatch(actionCreators.startFetchingPicks());
-
-  axios.get('https://api.github.com/repos/code-mancers/picks/contents')
-  .then((response) => {
-    dispatch(actionCreators.fetchingPicksDone(response))
-  })
-  .catch((error) => {
-    dispatch(actionCreators.fetchingError(error));
-  })
-});
