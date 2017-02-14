@@ -82,7 +82,6 @@ class App extends React.Component {
       return (
         <div className="row">
           <div className="col-md-3 picks-list">
-            <img src="http://codemancers.com/assets/images/logo-c723c9f32c0a9aff88536017a6c4ed0d87c95e78484b25fc94d3cdfa8ab7b047.svg"/>
             <h3>Picks</h3>
             {rows}
           </div>

@@ -66,10 +66,6 @@ h1, h2, h3 {
 
 .pick-content {
   padding: 10px;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 33%;
 }
 
 .picks-list {
